@@ -24,7 +24,7 @@ export default class {
 
     // When the editor is ready, set the value to whatever is stored in indexeddb.
     // Fall back to localStorage if nothing is stored in indexeddb, and if neither is available, set the value to header.
-    getOneDb().then((text) => {
+    getOneDb(1).then(({ text } ) => {
       console.info('Loaded data from IndexedDB, injecting into editor', text);
       this.editor.setValue(text || localData || header);
       console.log("After: ", this.editor.value)
